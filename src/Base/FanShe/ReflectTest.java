@@ -9,6 +9,11 @@ public class ReflectTest {
         Properties pro = new Properties();
         //1.2 加载配置文件，转换为一个集合
         //1.2.1 获取class目录下的配置文件
+        /**
+         * getClassLoader 取得该class对象的类装载器，
+         * 类装载器负责从Java的字符文件将字符流读入内存，并构造class对象
+         */
+        ClassLoader classLoader1 = Person.class.getClassLoader();
         ClassLoader classLoader = ReflectTest.class.getClassLoader();
         InputStream is = classLoader.getResourceAsStream("pro.properties");
         pro.load(is);
