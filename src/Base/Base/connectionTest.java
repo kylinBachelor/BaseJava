@@ -39,6 +39,15 @@ public class connectionTest {
         String string = InterfaceSample.getString();
         System.out.println(string);
 
+        // 测试泛型
+        Pair<String> stringPair = new Pair<>();
+        stringPair.setFirst("First");
+        stringPair.setSecond("Second");
+        System.out.println(stringPair.toString());
+
+        // 测试泛型方法 以下两种情况都可，编译器可通过入参判断类型
+        Pair.<String>getMiddle("cong","peitong","tong");
+        Pair.getMiddle("cong","peitong","tong");
 
     }
 }
