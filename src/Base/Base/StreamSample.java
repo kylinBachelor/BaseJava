@@ -1,14 +1,15 @@
 package Base.Base;
 
+import java.io.Serializable;
 import java.lang.reflect.Array;
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
-
 /**
  * @createUser： congpeitong
  * @createTime： 2022/2/15
- * @describe：Java流的使用
+ * @describe：Java流的使    用
  */
 public class StreamSample {
     public static void main(String[] args) {
@@ -24,10 +25,21 @@ public class StreamSample {
         System.out.println(count);
         int[] ints = {1,2,3,4,5,6,7,8,9};
 
+        // Collection接口的Stream方法可以将任何一个集合转换为一个流。如果有一个是数组，那么可以使用静态的Stream.of方法
         System.out.println(Stream.of(1,2,3,4,5,6,7,8,9)
-                        .filter(intss->intss>8)
-                        .count());
+                        .limit(8)
+                        .collect(Collectors.toList()));
+//                        .filter(intss->intss>8)
+//                        .count());
+        System.out.println(Stream.of(ints,0,3)
+                        .filter(in -> in.equals("2"))
+                .count());
+
+
+
     }
+
+
 
 
 
