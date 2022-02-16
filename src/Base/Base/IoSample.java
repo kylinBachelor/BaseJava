@@ -1,6 +1,9 @@
 package Base.Base;
 
 import java.io.*;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 
 /**
  * @createUser： congpeitong
@@ -20,12 +23,30 @@ public class IoSample {
         FileOutputStream fileOutputStream = new FileOutputStream("target.txt");
         byte[] bytes = new byte[1024];
         int length;
-        System.out.println(fileInputStream.read(bytes));
-        while ((length = fileInputStream.read(bytes)) != -1) {
+        /*while ((length = fileInputStream.read(bytes)) != -1) {
             fileOutputStream.write(bytes,0,length);
+        }*/
+        //fileInputStream.close();
+        //fileOutputStream.close();
+
+        DataInputStream dataInputStream = new DataInputStream(fileInputStream);
+        DataOutputStream dataOutputStream = new DataOutputStream(fileOutputStream);
+        int dataRead;
+        while((dataRead = dataInputStream.read()) != -1) {
+            dataOutputStream.write(dataRead);
         }
-        fileInputStream.close();
-        fileOutputStream.close();
+        dataInputStream.close();
+        dataOutputStream.close();
+
+        Path path = Paths.get("test.txt");
+        Path fileName = path.getFileName();
+        System.out.println(fileName);
+
+        Path path1 = Paths.get("target1.txt");
+        Files.createFile(path1);
+        
+
+
     }
 
 }
