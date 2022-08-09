@@ -1,9 +1,9 @@
-package Lambda;
+package MyLambda;
 
 import java.util.Arrays;
 import java.util.Comparator;
 
-public class Labmda2 {
+public class Lambda2 {
     public static void main(String[] args) {
         //使用数组存储多个Person对象
         Person[] arr = {

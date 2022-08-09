@@ -1,4 +1,4 @@
-package Lambda;
+package MyLambda;
 
 public class Person {
     private String name;

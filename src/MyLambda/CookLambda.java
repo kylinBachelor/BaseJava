@@ -1,4 +1,4 @@
-package Lambda;
+package MyLambda;
 
 /**
  * 给定一个厨子cook接口，内部含有唯一的抽象方法，makeFood，且无参数，无返回值

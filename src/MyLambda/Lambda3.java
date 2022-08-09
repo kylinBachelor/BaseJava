@@ -1,4 +1,4 @@
-package Lambda;
+package MyLambda;
 
 public class Lambda3 {
     public static void main(String[] args) {

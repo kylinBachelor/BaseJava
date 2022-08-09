@@ -1,4 +1,4 @@
-package Lambda;
+package MyLambda;
 
 /**
  * Lambda 表达式标准格式
