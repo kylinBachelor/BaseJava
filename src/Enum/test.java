@@ -2,6 +2,8 @@ package Enum;
 
 public class test {
     public static void main(String[] args) {
-        System.out.println(BatchSnType.BATCH.());
+        BatchSnType batchSnType = BatchSnType.BATCH;
+        System.out.println(batchSnType);
+
     }
 }
