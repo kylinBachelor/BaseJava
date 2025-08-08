@@ -4,6 +4,10 @@ public class Person {
     private String name;
     private int age;
 
+    static {
+        System.out.println("Person 静态代码块 初始化执行");
+    }
+
     public String getName() {
         return name;
     }

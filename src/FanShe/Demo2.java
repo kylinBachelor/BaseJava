@@ -1,6 +1,7 @@
 package FanShe;
 
-import java.lang.reflect.Modifier;
+import java.lang.reflect.Field;
+import java.math.BigDecimal;
 
 /**
  * @author congpeitong
@@ -8,12 +9,18 @@ import java.lang.reflect.Modifier;
  */
 public class Demo2 {
 
-    public static void main(String[] args) {
-        Class<?> personClass = Person.class;
+    public static void main(String[] args) throws Exception{
+       
+        //Class<Person> personClass = Person.class;
 
-        System.out.println(personClass.getName());
-        System.out.println(personClass.getFields());
-        System.out.println(personClass.getConstructors());
-        System.out.println(personClass.getMethods());
+        //Class<?> uC = Class.forName("FanShe.Person");
+
+        Person person = new Person();
+        Class<?> pC = person.getClass();
+
+        pC.getMethod(null, null);
+        Field nameField = pC.getField("name");
+        nameField.get(null);
+      
     }
 }
